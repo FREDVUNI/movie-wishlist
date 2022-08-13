@@ -1,3 +1,7 @@
+# Note
+
+search (the search is in sync with the search input) for any movie of your choice and add it to the watch list
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
