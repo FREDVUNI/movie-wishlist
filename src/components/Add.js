@@ -28,7 +28,7 @@ const Add = () => {
                 <div className="input-wrapper">
                     <input type="text" placeholder="search for movies" value={query} onChange={changeQuery}/>
                 </div>
-                {movies.length > 0 && (
+                {movies && movies.length > 0 && (
                     <ul className="results">
                         {movies?.map(movie =>(
                             <li key={movie.id}>
