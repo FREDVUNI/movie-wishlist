@@ -20,6 +20,7 @@ export const MovieProvider = ({children}) =>{
     useEffect(()=>{
         localStorage.setItem("watch-list",JSON.stringify(state.watchList))
         localStorage.setItem("watched",JSON.stringify(state.watched))
+        localStorage.setItem("wish-list",JSON.stringify(state.wishList))
     },[state])
 
     //actions
