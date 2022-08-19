@@ -9,6 +9,9 @@ const WatchList = () => {
             <div className="container">
                 <div className="header">
                     <h2 className="heading">my watch list</h2>
+                    <span className="count-pill">
+                        {watchList.length === 1 ? watchList.length +' movie':watchList.length +' movies'}
+                    </span>
                 </div>
                 {
                     watchList.length > 0 ? (

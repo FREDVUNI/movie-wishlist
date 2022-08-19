@@ -6,7 +6,10 @@ const initialState ={
     JSON.parse(localStorage.getItem("watch-list")) : [],
 
     watched:localStorage.getItem("watched") ? 
-    JSON.parse(localStorage.getItem("watched")):[]
+    JSON.parse(localStorage.getItem("watched")):[],
+
+    wishList:localStorage.getItem("wish-list") ?  
+    JSON.parse(localStorage.getItem("wish-list")) : [],
 }
 
 export const MoviesContext = createContext(initialState)  
@@ -24,8 +27,45 @@ export const MovieProvider = ({children}) =>{
         dispatch({type:"ADD_TO_WATCH_LIST",payload:movie})
     }
 
+    const removeMovie = (id) =>{
+        dispatch({type:"REMOVE_FROM_WATCH_LIST",payload:id})
+    }
+
+    const watchedMovie = (movie) =>{
+        dispatch({type:"ADD_WATCHED_MOVIE",payload:movie})
+    }
+
+    const addWatchedMovie = (movie) =>{
+        dispatch({type:"ADD_TO_WATCHED_LIST",payload:movie})
+    }
+
+    const removeWatchedMovie = (id) =>{
+        dispatch({type:"REMOVE_FROM_WATCHED_LIST",payload:id})
+    }
+
+    const addToWishList = (movie) =>{
+        dispatch({type:"ADD_TO_WISH_LIST",payload:movie})
+    }
+
+    const removeWishedMovie = (id) =>{
+        dispatch({type:"REMOVE_FROM_WISH_LIST",payload:id})
+    }
+
     return(
-        <MoviesContext.Provider value={{watched:state.watched,watchList:state.watchList,addMovie}}>
+        <MoviesContext.Provider 
+            value={{
+                watched:state.watched,
+                watchList:state.watchList,
+                wishList:state.wishList,
+                addMovie,
+                removeMovie,
+                watchedMovie,
+                addWatchedMovie,
+                removeWatchedMovie,
+                addToWishList,
+                removeWishedMovie
+            }}
+        >
             {children}
         </MoviesContext.Provider>
     )

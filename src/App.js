@@ -6,11 +6,14 @@ import Add from './components/Add'
 import Watched from './components/Watched'
 import Header from './components/Header'
 import {MovieProvider} from './context/GlobalContext'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
   return (
     <MovieProvider>  
     <Router>
+      <ToastContainer/>
       <Header/>
       <Routes>
         <Route path="/" element={<WatchList/>}/>

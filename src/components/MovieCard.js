@@ -2,10 +2,12 @@ import React,{useContext} from 'react'
 import {MoviesContext} from '../context/GlobalContext'
 
 const MovieCard = ({movie}) =>{
-    const {addMovie,watchList} = useContext(MoviesContext)
+    const {addMovie,watchList,watched,watchedMovie} = useContext(MoviesContext)
     
     let addedMovies = watchList && watchList.find((movies) => movies.id === movie.id)
-    const movieExists = addedMovies ? true:false
+    let watchedMovies = watched && watched.find((movies) => movies.id === movie.id)
+    const movieExists = addedMovies ? true: watchedMovies ? true :false
+    const watchedExists = watchedMovies ? true :false
 
     return(
         <div className="result-card">
@@ -27,6 +29,9 @@ const MovieCard = ({movie}) =>{
                 <div className="controls">
                     <button className="btn" disabled={movieExists} onClick={()=>addMovie(movie)}>
                         {movieExists ? 'watch list': 'Add To WatchList'}
+                    </button>
+                    <button className="btn" disabled={watchedExists} onClick={()=>watchedMovie(movie)}>
+                        {watchedExists ? 'watched': 'Add To Watched'}
                     </button>
                 </div>
             </div>
