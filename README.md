@@ -1,3 +1,8 @@
+# screenshot
+
+![movie-wish-list (1)](https://user-images.githubusercontent.com/41730664/208957621-0b77e650-3062-4538-a555-1f0eb81056e5.png)
+
+
 # Note
 
 search (the search is in sync with the search input) for any movie of your choice and add it to the watch list
